@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter } from 'react-router-dom'
 import MainLayout from '../Layouts/MainLayout/MainLayout'
 import Home from '../pages/Home/Home'
 import Profile from './../pages/Profile/Profile';
@@ -11,8 +11,9 @@ import ProtectedRoutes from './ProtectedRoutes';
 import ProtectedAuthRoutes from './ProtectedAuthRoutes';
 import PostDetails from '../pages/PostDetails/PostDetails';
 import Settings from '../pages/Settings/Settings';
+ 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: '',
         element: <MainLayout />,
