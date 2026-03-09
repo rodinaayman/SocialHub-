@@ -82,7 +82,7 @@ export default function PostCard({ post }) {
         <>
             <Card className="w-full mb-6 overflow-hidden">
                 <CardHeader className="gap-3 pb-4 px-4 pt-4">
-                    <Link to={`/Profile/${user?._id}`} className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
+                    <Link to={`/profile/${user?._id}`} className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
 
                         <div className="flex items-center gap-3 flex-1">
                             <Image
@@ -149,7 +149,7 @@ export default function PostCard({ post }) {
                 )}
 
                 <div className="w-full text-right px-4 py-2">
-                    <Link to={`/PostDetails/${post._id}`} className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-medium">
+                    <Link to={`/post-details/${post._id}`} className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-medium">
                         View details
                     </Link>
                 </div>

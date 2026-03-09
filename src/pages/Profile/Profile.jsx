@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../context/AuthContext';
 import { getUserProfile } from '../../Service/Proflie.service';
 import PostListing from '../../components/Layout/Posts/PostListing';
-
+import { Link as RouterLink } from "react-router-dom";
 export default function Profile() {
     const { id } = useParams();
     const { userData: myData, userId } = useContext(AuthContext);
@@ -57,9 +57,7 @@ export default function Profile() {
 
                     {isMyProfile && (
                         <div className="flex justify-center mb-4">
-                            <Button
-                                as={Link}
-                                to="/settings" 
+                            <Button as={RouterLink} 
                                 variant="bordered" 
                                 className="rounded-full border-gray-300"
                                 startContent={<FaRegEdit />}

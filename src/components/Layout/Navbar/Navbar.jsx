@@ -12,7 +12,7 @@ import {
   Avatar,
   Button,
 } from "@heroui/react";
-
+import { Link as RouterLink } from "react-router-dom";
 import { AuthContext } from '../../../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
@@ -43,9 +43,9 @@ export default function App() {
 
         <NavbarItem isActive={location.pathname === '/'}>
           <Link
+            as={RouterLink} to="/" className="flex items-center text-xl hover:text-primary transition-colors"
+
             color={location.pathname === '/' ? 'primary' : 'foreground'}
-            href="/"
-            className="flex items-center text-xl hover:text-primary transition-colors"
           >
             <IoHome />
             <span className='ms-1.5'>Feed</span>
@@ -54,8 +54,8 @@ export default function App() {
 
         <NavbarItem isActive={location.pathname.includes('/profile')}>
           <Link
+          as={RouterLink} to="/profile"
             color={location.pathname.includes('/profile') ? 'primary' : 'foreground'}
-            href="/profile"
             className="flex items-center text-xl hover:text-primary transition-colors"
           >
             <CgProfile />
@@ -86,10 +86,10 @@ export default function App() {
                   {userData?.email}
                 </p>
               </DropdownItem>
-              <DropdownItem key="settings" href="/settings" startContent={<FiSettings />}>
+              <DropdownItem  key="settings" as={RouterLink} to="/settings" startContent={<FiSettings />}>
                 Settings
               </DropdownItem>
-              <DropdownItem key="profile_page" href="/profile">
+              <DropdownItem key="profile_page" as={RouterLink} to="/profile">
                 My Profile
               </DropdownItem>
 
@@ -106,12 +106,12 @@ export default function App() {
         ) : (
           <div className="flex items-center gap-2">
             <NavbarItem>
-              <Button as={Link} color="primary" href="/auth/login" variant="flat">
+              <Button  color="primary" as={RouterLink} to="/auth/login" variant="flat">
                 Login
               </Button>
             </NavbarItem>
             <NavbarItem>
-              <Button as={Link} color="primary" href="/auth/register" variant="flat">
+              <Button  color="primary" as={RouterLink} to="/auth/register" variant="flat">
                 Sign Up
               </Button>
             </NavbarItem>

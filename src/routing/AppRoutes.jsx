@@ -15,7 +15,7 @@ import Settings from '../pages/Settings/Settings';
 
 export const router = createHashRouter([
     {
-        path: '',
+        path: '/',
         element: <MainLayout />,
         children: [
             {
@@ -25,7 +25,7 @@ export const router = createHashRouter([
                 </ProtectedRoutes>)
             },
             {
-                path: 'Profile/:id?',
+                path: 'profile/:id?',
 
                 element: (<ProtectedRoutes>
                     <Profile />
@@ -33,7 +33,7 @@ export const router = createHashRouter([
                 )
             },
             {
-                path: 'PostDetails/:postId',
+                path: 'post-details/:postId',
 
                 element: (<ProtectedRoutes>
                     <PostDetails />
