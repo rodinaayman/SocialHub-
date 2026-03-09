@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from 'react'; // 1. استيراد useRef
+import { useState, useContext, useRef } from 'react'; 
 import { Button, Image, Input } from "@heroui/react";
 import { FiSend, FiImage } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";

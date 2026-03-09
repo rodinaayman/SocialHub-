@@ -23,27 +23,24 @@ export default function AuthProvider({ children }) {
   }
 
 useEffect(() => {
-    if (userToken) {
-        try {
-            const decoded = jwtDecode(userToken);
-            setUserId(decoded.user);
-            
-            const loadUserData = async () => {
-                const data = await getUserData(); 
-                if (data) {
-                    setUserData(data);
-                }
-            };
-            
-            loadUserData();
+  if (userToken) {
+    try {
+      const decoded = jwtDecode(userToken);
+      setUserId(decoded?.user || null);
 
-        } catch (error) {
-            console.error("Invalid Token", error);
-            removeUserToken();
-        }
+      const loadUserData = async () => {
+        const data = await getUserData(); 
+        if (data) setUserData(data);
+      };
+
+      loadUserData();
+
+    } catch (error) {
+      console.error("Invalid Token", error);
+      removeUserToken();
     }
-  }, [userToken]);
-
+  }
+}, [userToken]);
   return (
     <AuthContext.Provider value={{ userToken, userId, userData, saveUserToken, removeUserToken }}>
       {children}

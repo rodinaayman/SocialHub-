@@ -23,7 +23,6 @@ export const getUserProfile = async (userId) => {
       headers: { Authorization: `Bearer ${token}` }
     });
     
-    console.log("Profile Data:", data); 
     return data.data.user || data.data; 
 
   } catch (error) {

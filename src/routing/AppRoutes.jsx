@@ -13,7 +13,7 @@ import PostDetails from '../pages/PostDetails/PostDetails';
 import Settings from '../pages/Settings/Settings';
  
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
